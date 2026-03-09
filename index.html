@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MotoGP – Planos de Assinatura</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #0a1628;
+    }
+
+    .motogp-section {
+      background-color: #0a1628;
+      color: #ffffff;
+      padding: 60px 20px;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      box-sizing: border-box;
+    }
+
+    .motogp-section * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    .motogp-section .section-title {
+      text-align: center;
+      font-size: 28px;
+      font-weight: 700;
+      margin-bottom: 48px;
+      color: #fff;
+    }
+
+    .motogp-section .cards-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      gap: 24px;
+      max-width: 1100px;
+      margin: 0 auto 48px;
+      flex-wrap: wrap;
+    }
+
+    .motogp-section .plan-card {
+      background: #ffffff;
+      color: #fff;
+      border-radius: 12px;
+      padding: 32px 28px;
+      flex: 1;
+      min-width: 280px;
+      max-width: 340px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      border: 2px solid transparent;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .motogp-section .plan-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .motogp-section .plan-card.featured {
+      border: 3px solid #1a56db;
+      transform: scale(1.05);
+      box-shadow: 0 8px 32px rgba(26, 86, 219, 0.3);
+      z-index: 1;
+    }
+
+    .motogp-section .plan-card.featured:hover {
+      transform: scale(1.05) translateY(-4px);
+      box-shadow: 0 16px 48px rgba(26, 86, 219, 0.4);
+    }
+
+    .motogp-section .plan-name {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 4px;
+      color: #0f172a;
+    }
+
+    .motogp-section .plan-category {
+      font-size: 13px;
+      font-weight: 700;
+      color: #334155;
+      margin-bottom: 2px;
+    }
+
+    .motogp-section .plan-days {
+      font-size: 13px;
+      color: #64748b;
+      margin-bottom: 12px;
+    }
+
+    .motogp-section .plan-price {
+      font-size: 36px;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 14px;
+      line-height: 1.1;
+    }
+
+    .motogp-section .plan-description {
+      font-size: 13px;
+      color: #475569;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .motogp-section .plan-features {
+      list-style: none;
+      margin-bottom: 28px;
+      flex-grow: 1;
+    }
+
+    .motogp-section .plan-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13px;
+      color: #334155;
+      margin-bottom: 12px;
+      line-height: 1.45;
+    }
+
+    .motogp-section .plan-features li svg {
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .motogp-section .plan-btn {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+      background-color: #1a56db;
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      padding: 14px 24px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      margin-top: auto;
+    }
+
+    .motogp-section .plan-btn:hover {
+      background-color: #1444b0;
+    }
+
+    .motogp-section .bottom-text {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .motogp-section .bottom-text h3 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .motogp-section .bottom-text p {
+      font-size: 15px;
+      color: #94a3b8;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 900px) {
+      .motogp-section .plan-card.featured {
+        transform: scale(1);
+      }
+
+      .motogp-section .plan-card.featured:hover {
+        transform: translateY(-4px);
+      }
+
+      .motogp-section .cards-wrapper {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .motogp-section .plan-card {
+        max-width: 400px;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="motogp-section">
+    <h2 class="section-title">Escolha o seu Plano MotoGP</h2>
+
+    <div class="cards-wrapper">
+
+      <!-- Card 1: Basic -->
+      <div class="plan-card">
+        <p class="plan-name">Basic</p>
+        <p class="plan-category">MotoGP VideoPass</p>
+        <p class="plan-days">Acesso por 1 mês</p>
+        <p class="plan-price">R$ 39<span style="font-size:18px;font-weight:600">/mês</span></p>
+        <p class="plan-description">Ideal para fãs que querem acompanhar as corridas ao vivo sem perder nenhuma largada.</p>
+        <ul class="plan-features">
+          <li>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="8" fill="#1a56db" fill-opacity="0.12"/>
+              <path d="M4.5 8.5L7 11L11.5 6" stroke="#1a56db" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Transmissões ao vivo de todas as corridas MotoGP
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="8" fill="#1a56db" fill-opacity="0.12"/>
+              <path d="M4.5 8.5L7 11L11.5 6" stroke="#1a56db" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Replays disponíveis por 24h após cada evento
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="8" fill="#1a56db" fill-opacity="0.12"/>
+              <path d="M4.5 8.5L7 11L11.5 6" stroke="#1a56db" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Acesso em 1 dispositivo simultâneo
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="8" fill="#e2e8f0"/>
+              <path d="M5.5 5.5L10.5 10.5M10.5 5.5L5.5 10.5" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span style="color:#94a3b8">Qualificações e treinos livres</span>
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="8" fill="#e2e8f0"/>
+              <path d="M5.5 5.5L10.5 10.5M10.5 5.5L5.5 10.5" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span style="color:#94a3b8">Câmeras on-board exclusivas</span>
+          </li>
+        </ul>
+        <a href="#" class="plan-btn">Assinar Basic</a>
+      </div>
+
+      <!-- Card 2: Pro (Featured) -->
+      <div class="plan-card featured">
+        <p class="plan-name">Pro</p>
+        <p class="plan-category">MotoGP VideoPass+</p>
+        <p class="plan-days">Acesso por 12 meses</p>
+        <p class="plan-price">R$ 29<span style="font-size:18px;font-weight:600">/mês</span></p>
+        <p class="plan-description">A escolha dos verdadeiros fãs. Temporada completa com todos os recursos premium desbloqueados.</p>
+        <ul class="plan-features">
+          <li>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="8" fill="#1a56db" fill-opacity="0.12"/>
+              <path d="M4.5 8.5L7 11L11.5 6" stroke="#1a56db" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Todas as transmissões ao vivo — MotoGP, Moto2, Moto3
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="8" fill="#1a56db" fill-opacity="0.12"/>
+              <path d="M4.5 8.5L7 11L11.5 6" stroke="#1a56db" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Qualificações, treinos livres e warm-up ao vivo
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="8" fill="#1a56db" fill-opacity="0.12"/>
+              <path d="M4.5 8.5L7 11L11.5 6" stroke="#1a56db" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Arquivo completo de temporadas anteriores
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="8" fill="#1a56db" fill-opacity="0.12"/>
+              <path d="M4.5 8.5L7 11L11.5 6" stroke="#1a56db" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Câmeras on-board e dados de telemetria em tempo real
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="8" fill="#1a56db" fill-opacity="0.12"/>
+              <path d="M4.5 8.5L7 11L11.5 6" stroke="#1a56db" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Acesso em até 3 dispositivos simultâneos
+          </li>
+        </ul>
+        <a href="#" class="plan-btn">Assinar Pro</a>
+      </div>
+
+      <!-- Card 3: Ultimate -->
+      <div class="plan-card">
+        <p class="plan-name">Ultimate</p>
+        <p class="plan-category">MotoGP All Access</p>
+        <p class="plan-days">Acesso por 12 meses</p>
+        <p class="plan-price">R$ 49<span style="font-size:18px;font-weight:600">/mês</span></p>
+        <p class="plan-description">Experiência máxima para quem não quer perder absolutamente nada do paddock ao pódio.</p>
+        <ul class="plan-features">
+          <li>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="8" fill="#1a56db" fill-opacity="0.12"/>
+              <path d="M4.5 8.5L7 11L11.5 6" stroke="#1a56db" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Tudo do plano Pro, sem restrições
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="8" fill="#1a56db" fill-opacity="0.12"/>
+              <path d="M4.5 8.5L7 11L11.5 6" stroke="#1a56db" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Conteúdo exclusivo do paddock e bastidores
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="8" fill="#1a56db" fill-opacity="0.12"/>
+              <path d="M4.5 8.5L7 11L11.5 6" stroke="#1a56db" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Download para assistir offline
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="8" fill="#1a56db" fill-opacity="0.12"/>
+              <path d="M4.5 8.5L7 11L11.5 6" stroke="#1a56db" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Estatísticas avançadas e análise tática por corrida
+          </li>
+          <li>
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <circle cx="8" cy="8" r="8" fill="#1a56db" fill-opacity="0.12"/>
+              <path d="M4.5 8.5L7 11L11.5 6" stroke="#1a56db" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Acesso ilimitado em todos os dispositivos
+          </li>
+        </ul>
+        <a href="#" class="plan-btn">Assinar Ultimate</a>
+      </div>
+
+    </div>
+
+    <div class="bottom-text">
+      <h3>Cancele quando quiser. Sem fidelidade.</h3>
+      <p>Todos os planos incluem acesso imediato assim que a assinatura é confirmada. Sem taxa de cancelamento, sem burocracia. Renova automaticamente, mas você controla tudo.</p>
+    </div>
+  </section>
+</body>
+</html>
